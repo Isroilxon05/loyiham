@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donorlar ro'yxati</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        a:hover {
+            background-color: #0a9835c9; 
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Donor qo'shish</h1>
+
+    <form action="/add" method="POST">
+        <input type="text" name="name" placeholder="Ism" required>
+        <input type="text" name="surname" placeholder="Familiya" required>
+        <input type="text" name="address" placeholder="Manzil" required>
+        <input type="text" name="Phone_number" placeholder="Tel raqam"  required>
+        <input type="text" name="Donor_name" placeholder="Donor nomi">
+        <input type="text" name="price" placeholder="Narxi">
+        <button style="padding: 4px;" type="submit">Qo'shish</button>
+    </form>
+    
+    <div style="text-align: right; background-color: #f8f9fa; padding: 10px;">
+        <a style="border: 2px solid #0a9835c9; 
+                  margin: 5px; 
+                  padding: 10px 15px; 
+                  text-decoration: none;
+                  font-size: 16px;
+                  font-weight: bold;
+                  border-radius: 5px;
+                  transition: background-color 0.3s, color 0.3s;" 
+           href="http://127.0.0.1:5000/mendagi_donirlar"
+          >
+           Mendagi donorlar
+        </a><br><br>
+    </div>
+    
+<table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ISM</th>
+                <th>Familiyasi</th>
+                <th>Manzil</th>
+                <th>Tel raqam</th>
+                <th>Donor nomi</th>
+                <th>Narxi</th>
+                
+            </tr>
+        </thead>
+       
+        <tbody>
+            {% for student in students: %}
+                <tr>
+                    <td>{{ student[0] }}</td>
+                    <td>{{ student[1] }}</td>
+                    <td>{{ student[2] }}</td>
+                    <td>{{ student[3] }}</td>
+                    <td>{{ student[4] }}</td>
+                    <td>{{ student[5] }}</td>
+                    <td>{{ student[6] }}</td>
+                    
+                </tr>
+
+            {% endfor %}
+            <div style="text-align: right; background-color: #f8f9fa; padding: 10px;">
+                <a style="border: 2px solid #0a9835c9; 
+                          margin: 5px; 
+                          padding: 10px 15px; 
+                          text-decoration: none;
+                          font-size: 16px;
+                          font-weight: bold;
+                          border-radius: 5px;
+                          transition: background-color 0.3s, color 0.3s;" 
+                   href="http://127.0.0.1:5000/"
+                  >
+                   Orqaga
+                </a>
+            </div>
+            <h3 style="text-align: center;">Donorlar ro'yxati</h3>
+        </tbody>
+    </table>
+</body>
+</html>

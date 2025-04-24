@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donorlar ro'yxati</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+       /* .text-content {
+            flex: 1;
+        }
+        .container {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin: auto;
+        } */
+        #r1 {
+            border: 1px solid black;
+            text-align: center;
+        }
+        a {
+            display: block;
+            text-align: center;
+           
+            border: 2px solid black;
+            width: 120px;
+           
+            
+            
+        }
+        a:hover {
+            background-color: #0a9835c9; 
+            color: white; 
+            
+            display: block;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #0a9835c9;">Xush kelibsiz</h1>
+    <div class="container">
+        <img style="display: flex ; margin: auto;" src="{{ url_for('static', filename='image.png') }}" alt="Bu yerda rasm bor" height="400" width="550" id="r1">
+        
+        <div class="text-content">
+            <a style="border: 2px solid #0a9835c9; 
+            
+            
+            margin: 5px; 
+            padding: 10px 15px; 
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;"  href="http://127.0.0.1:5000/index">Donor sotish</a>
+            <a style="border: 2px solid #0a9835c9; 
+            margin: 5px; 
+            padding: 10px 15px; 
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;"  href="http://127.0.0.1:5000/index1">Donor sotib olish</a>
+            <a style="border: 2px solid #0a9835c9; 
+            margin: 5px; 
+            padding: 10px 15px; 
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;"  href="http://127.0.0.1:5000/card">Karta qo'shish</a>    
+    </div>
+    </div>
+</body>
+</html>

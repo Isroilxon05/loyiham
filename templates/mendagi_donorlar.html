@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donorlar ro'yxati</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        a:hover {
+            background-color: #0a9835c9; 
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+   
+    <h3 style="text-align: center; ">Mendagi donorlar ro'yxati</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ISM</th>
+                <th>Familiyasi</th>
+                <th>Manzil</th>
+                <th>Tel raqam</th>
+                <th>Donor nomi</th>
+                <th>Narxi</th>
+                <!-- <th>Harakat</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students: %}
+                <tr>
+                    <td>{{ student[0] }}</td>
+                    <td>{{ student[1] }}</td>
+                    <td>{{ student[2] }}</td>
+                    <td>{{ student[3] }}</td>
+                    <td>{{ student[4] }}</td>
+                    <td>{{ student[5] }}</td>
+                    <td>{{ student[6] }}</td>
+                    
+                </tr>
+            {% endfor %}
+            <div style="text-align: right; background-color: #f8f9fa; padding: 10px;">
+                <a style="border: 2px solid #0a9835c9; 
+                          margin: 5px; 
+                          padding: 10px 15px; 
+                          text-decoration: none;
+                          font-size: 16px;
+                          font-weight: bold;
+                          border-radius: 5px;
+                          transition: background-color 0.3s, color 0.3s;" 
+                   href="http://127.0.0.1:5000/index"
+                  >
+                   Orqaga
+                </a>
+            </div>
+        </tbody>
+    </table>
+</body>
+</html>

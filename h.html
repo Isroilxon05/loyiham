@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="TUIT LMS">
+    <meta name="keywords" content="admin, dashboard">
+    <meta name="author" content="stacks">
+    <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>TUIT LMS</title>
+    <!-- Styles -->
+    
+    <link href="https://lms.tuit.uz/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://lms.tuit.uz/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://lms.tuit.uz/assets/plugins/icomoon/style.css" rel="stylesheet">
+    <link href="https://lms.tuit.uz/assets/plugins/uniform/css/default.css" rel="stylesheet" />
+    <link href="https://lms.tuit.uz/assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
+    <!-- Theme Styles -->
+    <link href="https://lms.tuit.uz/assets/css/space.css?=v1.1" rel="stylesheet">
+    <link href="https://lms.tuit.uz/assets/css/custom.css?=v1.1" rel="stylesheet">
+    <link href="https://lms.tuit.uz/assets/css/style.css?=v1.1" rel="stylesheet">    
+</head>
+
+<body>    
+    <div class="login">
+        <div class="login__item login__item--illust">
+            <img src="https://lms.tuit.uz/assets/images/study.svg" alt="">
+        </div>
+        <div class="login__item">
+            <div class="login__item-content">
+                <h3 class="login__title">Isrilxon NOMIDAGI <br> TOSHKENT AXBOROT TEXNOLOGIYALARI<br>
+                    UNIVERSITETI</h3>
+                <img src="https://lms.tuit.uz/assets/images/logo-md.png" alt="" height="75">
+                <h4 class="login__lsms">Learning Management System </h4>
+                                                <form action="https://lms.tuit.uz/auth/login" method="POST">
+                    <input type="hidden" name="_token" value="q4v6gnOEgEtBEkOOBiPtuIlqQrxHhUQSAoqggJ9F">                    <div class="form-group text-left">
+                        <label class="login__label" for="login">Login</label>
+                        <input type="text" name="login" value=""
+                            class="form-control login__input" id="login" placeholder="Loginni kiriting">
+                    </div>
+                    <div class="form-group text-left">
+                        <label class="login__label" for="password">Parol</label>
+                        <div class="input-group">
+                            <input type="password" name="password" class="form-control login__input" id="password"
+                                placeholder="Parolni kiriting">
+                            <span class="input-group-btn">
+                                <button class="btn login__input form-control js-password-eye" type="button"><i
+                                        class="fa fa-eye-slash"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+                    <button type="submit" class="btn btn-primary full-width" id="login-btn"
+                        disabled>Kirish</button><br />
+                </form>
+            </div>
+            <div class="login__footer">Copyright © 2021 of Tashkent University of Information Technologies</div>
+
+        </div>
+    </div>
+    <div style="display:none">
+        <a href="http://www.uz/ru/res/visitor/index?id=1802" target="_blank"><img
+                src="https://cnt0.www.uz/counter/collect?id=1802&amp;r=&amp;pg=https://tuit.uz/en&amp;c=Y&amp;j=N&amp;wh=2560x1440&amp;px=24&amp;js=1.3&amp;col=2C93D6&amp;t=ffffff&amp;p=5A5A5A"
+                alt="Топ рейтинг www.uz" width="88" height="31"></a>
+    </div>
+    <script src="https://lms.tuit.uz/assets/plugins/jquery/jquery-3.1.0.min.js"></script>
+    <script src="https://lms.tuit.uz/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://lms.tuit.uz/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="https://lms.tuit.uz/assets/js/space.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcpYMcUAAAAABdvDAhywpZtEuep7aQcyDLaPUR_"></script>
+    <script>
+        function getReCaptcha() {
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6LcpYMcUAAAAABdvDAhywpZtEuep7aQcyDLaPUR_', {
+                    action: 'login'
+                }).then(function(token) {
+                    if (token) {
+                        document.getElementById('g-recaptcha-response').value = token;
+                    }
+                    document.getElementById('login-btn').disabled = false;
+                });
+            });
+        }
+        getReCaptcha();
+        setInterval(function() {
+            getReCaptcha();
+        }, 150000);
+
+        $(".js-password-eye").on('click', function() {
+            var _this = $(this)
+            _pwd = $("[name=password]");
+            _this.find('i').removeClass()
+
+            if (_pwd.attr('type') === 'password') {
+                _this.find('i').addClass('fa fa-eye')
+                _pwd.attr('type', 'text');
+            } else {
+                _this.find('i').addClass('fa fa-eye-slash')
+                _pwd.attr('type', 'password');
+            }
+        });
+    </script>
+</body>
+
+</html>
